@@ -42,9 +42,12 @@ public class EmbededProvider extends Sprite implements IDataProvider {
     //----------------------------
     public var max:Number = 6;
 
-    //retorna a coleçao de imagens
+    /**
+     * retorna a coleção de imagens
+     */
+    private var _data:Array;
     public function get data():Array {
-          return [];
+        return _data;
     }
 
     //----------------------------
@@ -71,13 +74,14 @@ public class EmbededProvider extends Sprite implements IDataProvider {
     protected function getCollection():void
     {
         var a:Array = [
-            {alias:"A", reference: itemAClass, title: "Item A"},
+            {alias:"A", reference: "http://cdn1.iconfinder.com/data/icons/fruits/512/Apple.png", title: "Item A"},
             {alias:"B", reference: itemBClass, title: "Item B"},
             {alias:"C", reference: itemCClass, title: "Item C"},
             {alias:"D", reference: itemDClass, title: "Item D"},
             {alias:"E", reference: itemEClass, title: "Item E"},
             {alias:"F", reference: itemFClass, title: "Item F"}
         ];
+        _data = a;
         var e:ProviderEvent = new ProviderEvent(ProviderEvent.LOAD_DATA, a,  this);
         dispatchEvent(e);
     }

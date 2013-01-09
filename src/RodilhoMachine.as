@@ -4,6 +4,7 @@ import flash.display.Graphics;
 import flash.display.Sprite
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
+import flash.events.Event;
 import flash.events.EventDispatcher;
 
 import rodilho.Machine;
@@ -26,10 +27,10 @@ public class RodilhoMachine extends Sprite {
         super();
         stage.scaleMode = StageScaleMode.NO_SCALE;
         stage.align = StageAlign.TOP_LEFT;
-        init();
+        addEventListener(Event.ADDED_TO_STAGE, init)
     }
 
-    public function init():void
+    public function init(e:*):void
     {
         console = new Console();
         addChild(console);
@@ -48,8 +49,8 @@ public class RodilhoMachine extends Sprite {
         ]
         machine.run();
         addChild(machine);
-
-
+        console.x = stage.width - console.width;
+        setChildIndex(console,numChildren-1)
 
     }
 

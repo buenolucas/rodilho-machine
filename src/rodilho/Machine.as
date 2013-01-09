@@ -2,15 +2,14 @@ package rodilho {
 import flash.display.Sprite;
 
 import rodilho.events.ProviderEvent;
+import rodilho.intelligence.IIntelligence;
 
 import rodilho.provider.IDataProvider;
 
 public class Machine extends Sprite {
 
     public var provider:IDataProvider;
-
-
-
+    public var intelligence:IIntelligence;
 
     public function Machine() {
         super();

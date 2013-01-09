@@ -4,6 +4,11 @@
     <configurations>
       <configuration name="rodilho-machine" pure-as="true" main-class="RodilhoMachine" output-file="RodilhoMachine.swf" output-folder="$MODULE_DIR$/out/production/rodilho-machine" use-html-wrapper="true" wrapper-template-path="$MODULE_DIR$/html-template">
         <dependencies target-player="11.1">
+          <entries>
+            <entry library-id="3e98a12f-5ff4-4b1c-b485-1daf9985a2e0">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
@@ -21,6 +26,16 @@
     </content>
     <orderEntry type="jdk" jdkName="flex_sdk_4.6" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="3e98a12f-5ff4-4b1c-b485-1daf9985a2e0" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/vendor/greensock.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

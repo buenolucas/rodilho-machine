@@ -1,10 +1,3 @@
-/**
- * Created with IntelliJ IDEA.
- * User: buenolucas
- * Date: 09/01/13
- * Time: 13:33
- * To change this template use File | Settings | File Templates.
- */
 package rodilho.provider {
 import flash.display.Sprite;
 
@@ -24,29 +17,23 @@ public class EmbededProvider extends Sprite implements IDataProvider {
     // embedded
     //
     //----------------------------
-    [Embed(source="../assets/a.png")]
-    [Bindable]
-    public static var itemAClass:Class;
+    [Embed(source="../../assets/a.png")]
+    private  var itemAClass:Class;
 
-    [Embed(source="../assets/b.png")]
-    [Bindable]
-    public static var itemBClass:Class;
+    [Embed(source="../../assets/b.png")]
+    public  var itemBClass:Class;
 
-    [Embed(source="../assets/c.png")]
-    [Bindable]
-    public static var itemCClass:Class;
+    [Embed(source="../../assets/c.png")]
+    private  var itemCClass:Class;
 
-    [Embed(source="../assets/d.png")]
-    [Bindable]
-    public static var itemDClass:Class;
+    [Embed(source="../../assets/d.png")]
+    private var itemDClass:Class;
 
-    [Embed(source="../assets/e.png")]
-    [Bindable]
-    public static var itemEClass:Class;
+    [Embed(source="../../assets/e.png")]
+    private var itemEClass:Class;
 
-    [Embed(source="../assets/f.png")]
-    [Bindable]
-    public static var itemFClass:Class;
+    [Embed(source="../../assets/f.png")]
+    private var itemFClass:Class;
 
     //----------------------------
     //
@@ -78,15 +65,21 @@ public class EmbededProvider extends Sprite implements IDataProvider {
 
     public function loadData(params:Object):void
     {
-
         getCollection()
     }
 
     protected function getCollection():void
     {
-        var a:Array = [];
+        var a:Array = [
+            {alias:"A", reference: itemAClass, title: "Item A"},
+            {alias:"B", reference: itemBClass, title: "Item B"},
+            {alias:"C", reference: itemCClass, title: "Item C"},
+            {alias:"D", reference: itemDClass, title: "Item D"},
+            {alias:"E", reference: itemEClass, title: "Item E"},
+            {alias:"F", reference: itemFClass, title: "Item F"}
+        ];
         var e:ProviderEvent = new ProviderEvent(ProviderEvent.LOAD_DATA, a,  this);
-        dispatchEvent(e)     ;
+        dispatchEvent(e);
     }
 
 

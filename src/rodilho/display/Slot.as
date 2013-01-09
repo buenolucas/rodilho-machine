@@ -42,6 +42,7 @@ public class Slot extends Sprite {
      * container
      */
     public var container:Sprite;
+
     //--------------
     //
     // Constructor
@@ -80,9 +81,44 @@ public class Slot extends Sprite {
         container.mask = maskDisplay
 
     }
+
+    /**
+     * redimenciona e centraliza a imagem conforme tamanho do slot
+     */
     protected function adjustSize():void
     {
-        imageDisplay.width= imageDisplay.height = MachineConfig.SLOT_WIDTH
+        var imgWidth:Number     = imageDisplay is Loader ? imageDisplay.content.width : imageDisplay.width;
+        var imgHeight:Number    = imageDisplay is Loader ? imageDisplay.content.height : imageDisplay.height;
+
+        var boundsRatio:Number = MachineConfig.SLOT_HEIGHT/MachineConfig.SLOT_WIDTH;
+        var imageRatio:Number = imgHeight/imgWidth;
+
+        Console.log(imgWidth+","+imgHeight)
+        var widthTo:Number;
+        var heightTo:Number;
+        var xTo:Number;
+        var yTo:Number;
+
+        if(imageRatio>boundsRatio)
+        {
+            //ajustar pela largura
+            widthTo = MachineConfig.SLOT_WIDTH;
+            heightTo = Math.round(widthTo*imageRatio);
+            xTo = 0;
+            yTo = Math.round((MachineConfig.SLOT_HEIGHT - heightTo)/2);
+        } else
+        {
+            //ajustar pela altura
+            imageRatio = imgWidth / imgHeight;
+            heightTo = MachineConfig.SLOT_HEIGHT;
+            widthTo = Math.round(heightTo*imageRatio);
+            xTo = Math.round((MachineConfig.SLOT_WIDTH - widthTo)/2);
+            yTo = 0
+        }
+        imageDisplay.width = widthTo;
+        imageDisplay.height = heightTo;
+        imageDisplay.x = xTo;
+        imageDisplay.y = yTo;
     }
     protected function imageDisplay_completeHandler(e:Event):void
     {

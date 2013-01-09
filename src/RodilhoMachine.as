@@ -1,13 +1,28 @@
 package {
 
-import flash.display.Sprite;
-import flash.text.TextField;
+import flash.display.Sprite
+import flash.events.EventDispatcher;
+
+import rodilho.Machine;
+import rodilho.events.ProviderEvent;
+import rodilho.provider.EmbededProvider;
+
+import rodilho.provider.IDataProvider;
 
 public class RodilhoMachine extends Sprite {
-    public function RodilhoMachine() {
-        var textField:TextField = new TextField();
-        textField.text = "Hello, World";
-        addChild(textField);
+
+    public var machine:Machine
+
+    public function RodilhoMachine()
+    {
+        init();
     }
+    public function init():void {
+        machine = new Machine();
+        machine.provider = new EmbededProvider();
+        machine.render();
+        addChild(machine);
+    }
+
 }
 }

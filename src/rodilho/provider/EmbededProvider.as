@@ -74,7 +74,7 @@ public class EmbededProvider extends Sprite implements IDataProvider {
     protected function getCollection():void
     {
         var a:Array = [
-            {alias:"A", reference: "http://cdn1.iconfinder.com/data/icons/fruits/512/Apple.png", title: "Item A"},
+            {alias:"A", reference: itemAClass, title: "Item A"},
             {alias:"B", reference: itemBClass, title: "Item B"},
             {alias:"C", reference: itemCClass, title: "Item C"},
             {alias:"D", reference: itemDClass, title: "Item D"},

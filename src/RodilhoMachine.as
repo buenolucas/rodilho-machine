@@ -6,6 +6,7 @@ import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.EventDispatcher;
+import flash.geom.Rectangle;
 
 import rodilho.Machine;
 import rodilho.events.ProviderEvent;
@@ -14,13 +15,19 @@ import rodilho.provider.EmbededProvider;
 
 import rodilho.provider.IDataProvider;
 
+import ui.SimpleButton
+
+import util.Bounds;
 import util.Console;
 
 public class RodilhoMachine extends Sprite {
 
     public var machine:Machine;
 
+    public var dispatcher:SimpleButton
+
     public var console:Console;
+
 
     public function RodilhoMachine()
     {
@@ -49,8 +56,16 @@ public class RodilhoMachine extends Sprite {
         ]
         machine.run();
         addChild(machine);
+
+        dispatcher = new SimpleButton();
+        addChild(dispatcher);
+
         console.x = stage.width - console.width;
         setChildIndex(console,numChildren-1)
+        var mb:Rectangle = Bounds.getVisibleBounds(machine);
+
+        dispatcher.x = 20;
+        dispatcher.y = mb.y + mb.height+20
 
     }
 

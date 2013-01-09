@@ -63,7 +63,7 @@ public class EmbededProvider extends Sprite implements IDataProvider {
     //
     //----------------------------
 
-    public function loadData(params:Object):void
+    public function loadData(params:Object= null):void
     {
         getCollection()
     }

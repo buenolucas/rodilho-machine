@@ -38,8 +38,17 @@ public class RodilhoMachine extends Sprite {
 
         machine.provider = new EmbededProvider();
         machine.intelligence = new DefaultIntelligence();
+
+        machine.sequence = [
+            ["A", "B", "C", "D", "E", "F"],
+            ["B", "B", "A", "F", "E", "A"],
+            ["C", "A", "F", "F", "A", "A"],
+            ["A", "A", "A", "B", "B", "A"],
+            ["F", "A", "C", "C", "C", "A"]
+        ]
+        machine.run();
         addChild(machine);
-        machine.render();
+
 
 
     }

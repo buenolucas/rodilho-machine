@@ -7,9 +7,15 @@ package rodilho.provider
 
     public interface IDataProvider extends IEventDispatcher{
 
-        //retorna a coleçao de imagens
+        /**
+         * retorna a coleçao de imagens
+         */
         function get data():Array
 
-        function loadData(params:Object):void
+        /**
+         * carrega a coleção de imagens
+         * @param params
+         */
+        function loadData(params:Object= null ):void
     }
 }

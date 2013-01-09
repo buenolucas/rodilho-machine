@@ -35,16 +35,11 @@ public class Console extends Sprite {
         chromeDisplay = new Shape();
         addChild(chromeDisplay);
 
-
-
-
         textDisplay = new TextField();
-        textDisplay.wordWrap=true
-        textDisplay.multiline=true
+        textDisplay.wordWrap=true;
+        textDisplay.multiline=true;
 
-
-        addChild(textDisplay)
-
+        addChild(textDisplay);
 
         addEventListener(Event.ADDED_TO_STAGE,init)
     }
@@ -64,7 +59,7 @@ public class Console extends Sprite {
     }
     public static function log(text:String):void
     {
-        instance.textDisplay.appendText("# "+text+"\n\n")
+        instance.textDisplay.appendText("# "+text+"\n")
     }
 
 

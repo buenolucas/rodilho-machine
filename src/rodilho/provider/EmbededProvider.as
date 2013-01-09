@@ -12,19 +12,69 @@ import rodilho.events.ProviderEvent;
 
 public class EmbededProvider extends Sprite implements IDataProvider {
 
-
+    //--------------
+    //
+    // events
+    //
+    //--------------
     [Event(name="loadData", type="rodilho.events.ProviderEvent")]
 
-    public var max:Number = 6;
+    //----------------------------
+    //
+    // embedded
+    //
+    //----------------------------
+    [Embed(source="../assets/a.png")]
+    [Bindable]
+    public static var itemAClass:Class;
 
-    public function EmbededProvider() {
-        super();
-    }
+    [Embed(source="../assets/b.png")]
+    [Bindable]
+    public static var itemBClass:Class;
+
+    [Embed(source="../assets/c.png")]
+    [Bindable]
+    public static var itemCClass:Class;
+
+    [Embed(source="../assets/d.png")]
+    [Bindable]
+    public static var itemDClass:Class;
+
+    [Embed(source="../assets/e.png")]
+    [Bindable]
+    public static var itemEClass:Class;
+
+    [Embed(source="../assets/f.png")]
+    [Bindable]
+    public static var itemFClass:Class;
+
+    //----------------------------
+    //
+    // properties
+    //
+    //----------------------------
+    public var max:Number = 6;
 
     //retorna a coleçao de imagens
     public function get data():Array {
           return [];
     }
+
+    //----------------------------
+    //
+    // constructor
+    //
+    //----------------------------
+
+    public function EmbededProvider() {
+        super();
+    }
+
+    //----------------------------
+    //
+    // methdos
+    //
+    //----------------------------
 
     public function loadData(params:Object):void
     {

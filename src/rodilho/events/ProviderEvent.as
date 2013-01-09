@@ -8,9 +8,18 @@
 package rodilho.events {
 import flash.events.Event;
 
+import rodilho.provider.IDataProvider;
+
 public class ProviderEvent extends Event {
-    public function ProviderEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false) {
+    public static const LOAD_DATA:String = "loadData";
+
+    public var collection:Array;
+    public var provider:IDataProvider;
+
+    public function ProviderEvent(type:String, collection:Array, provider:IDataProvider, bubbles:Boolean = false, cancelable:Boolean = false) {
         super(type, bubbles, cancelable);
+        this.collection = collection;
+        this.provider = provider;
     }
 }
 }

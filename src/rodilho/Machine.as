@@ -1,16 +1,39 @@
-/**
- * Created with IntelliJ IDEA.
- * User: buenolucas
- * Date: 09/01/13
- * Time: 13:38
- * To change this template use File | Settings | File Templates.
- */
 package rodilho {
 import flash.display.Sprite;
 
+import rodilho.events.ProviderEvent;
+
+import rodilho.provider.IDataProvider;
+
 public class Machine extends Sprite {
+
+    public var provider:IDataProvider;
+
+
+
+
     public function Machine() {
         super();
+        init();
+    }
+
+    public function init()
+    {
+
+    }
+    public function render()
+    {
+        provider.addEventListener(ProviderEvent.LOAD_DATA, provider_loadDataHandler);
+    }
+
+    public function createMachine():void
+    {
+
+    }
+
+    protected function provider_loadDataHandler(e:ProviderEvent):void
+    {
+
     }
 }
 }

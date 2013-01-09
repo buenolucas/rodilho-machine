@@ -6,6 +6,7 @@ import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.EventDispatcher;
+import flash.events.MouseEvent;
 import flash.geom.Rectangle;
 
 import rodilho.Machine;
@@ -48,25 +49,29 @@ public class RodilhoMachine extends Sprite {
         machine.intelligence = new DefaultIntelligence();
 
         machine.sequence = [
-            ["A", "B", "C", "D", "E", "F"],
+            ["A", "B", "C", "D", "E", "F"]/*,
             ["B", "B", "A", "F", "E", "A"],
             ["C", "A", "F", "F", "A", "A"],
             ["A", "A", "A", "B", "B", "A"],
-            ["F", "A", "C", "C", "C", "A"]
+            ["F", "A", "C", "C", "C", "A"]*/
         ]
         machine.run();
         addChild(machine);
 
         dispatcher = new SimpleButton();
+        dispatcher.x = 20;
+        dispatcher.y = 560;
+        dispatcher.addEventListener(MouseEvent.CLICK, dispatcher_clickHandler)
         addChild(dispatcher);
 
-        console.x = stage.width - console.width;
+        console.x = 1920 - console.width;
         setChildIndex(console,numChildren-1)
-        var mb:Rectangle = Bounds.getVisibleBounds(machine);
 
-        dispatcher.x = 20;
-        dispatcher.y = mb.y + mb.height+20
 
+    }
+    protected function dispatcher_clickHandler(e:MouseEvent):void
+    {
+        machine.play();
     }
 
 }

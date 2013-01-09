@@ -94,7 +94,6 @@ package rodilho.display {
             var boundsRatio:Number = MachineConfig.SLOT_HEIGHT/MachineConfig.SLOT_WIDTH;
             var imageRatio:Number = imgHeight/imgWidth;
 
-            Console.log(imgWidth+","+imgHeight)
             var widthTo:Number;
             var heightTo:Number;
             var xTo:Number;

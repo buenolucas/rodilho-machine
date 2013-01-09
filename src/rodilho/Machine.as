@@ -3,6 +3,8 @@ import flash.display.Sprite;
 
 import rodilho.display.ItemsList;
 
+import rodilho.display.ItemsList;
+
 import rodilho.events.ProviderEvent;
 import rodilho.intelligence.IIntelligence;
 
@@ -38,8 +40,21 @@ public class Machine extends Sprite {
     {
         provider.addEventListener(ProviderEvent.LOAD_DATA, provider_loadDataHandler);
         provider.loadData();
+
+
     }
 
+    /**
+     * roda a bagaça
+     */
+    public function play():void
+    {
+        for(var i:int = 0;i<sequence.length;i++)
+        {
+            var list:ItemsList = rodilhos.getChildAt(i) as ItemsList;
+            list.shake();
+        }
+    }
     /**
      * Cria a máquina, disparado após adicionado ao palco
      */

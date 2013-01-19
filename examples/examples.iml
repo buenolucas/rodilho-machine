@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="rodilho-machine">
+  <component name="FlexBuildConfigurationManager" active="examples">
     <configurations>
-      <configuration name="rodilho-machine" output-type="Library" output-file="rodilho-machine.swc" output-folder="$MODULE_DIR$/bin">
+      <configuration name="examples" pure-as="true" main-class="Examples" output-file="Example01.swf" output-folder="$MODULE_DIR$">
         <dependencies target-player="11.1">
+          <entries>
+            <entry module-name="rodilho-machine" build-configuration-name="rodilho-machine">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="flex_sdk_4.6" />
         </dependencies>
         <compiler-options />
@@ -17,10 +22,11 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="flex_sdk_4.6" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="rodilho-machine" exported="" />
   </component>
 </module>
 
